@@ -24,7 +24,5 @@ stocks %>%
   filter(symbol %in% selected_stocks) %>%
   autoplot(open)
 
-stocks %>%
-  filter(symbol %in% c('AAPL', 'GOOG', 'FISV', 'FIS', 'IBM', 'EBAY', 'ADBE', 'HPQ', 'ORCL', 'YHOO')) %>%
-  autoplot(open) +
-  labs(title = 'Info Tech')
+selected_stocks <- stocks %>%
+  filter(symbol %in% c('AAPL', 'GOOG', 'FISV', 'FIS', 'IBM', 'EBAY', 'ADBE', 'HPQ', 'ORCL', 'YHOO'))
