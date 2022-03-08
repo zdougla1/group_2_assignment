@@ -18,8 +18,13 @@ stocks %>%
   labs(title = selected_stock)
 
 # Multiple stocks
-selected_stocks <- c("GOOG", "AAPL")
+selected_stocks <- c('AAPL', 'GOOG', 'FISV', 'FIS', 'IBM', 'EBAY', 'ADBE', 'HPQ', 'ORCL', 'YHOO')
 
 stocks %>%
   filter(symbol %in% selected_stocks) %>%
   autoplot(open)
+
+stocks %>%
+  filter(symbol %in% c('AAPL', 'GOOG', 'FISV', 'FIS', 'IBM', 'EBAY', 'ADBE', 'HPQ', 'ORCL', 'YHOO')) %>%
+  autoplot(open) +
+  labs(title = 'Info Tech')
