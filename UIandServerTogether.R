@@ -19,6 +19,12 @@ ui <- fluidPage(
               label = "Select a Stock", 
               choices = c("Apple" = "AAPL", "Google" = "GOOG", "Fiserv" = "FISV", "FIS" = "FIS", "IBM" = "IBM", "Ebay" = "EBAY", "Adobe" = "ADBE", "HP" = "HPQ", "Oracle" = "ORCL", "Yahoo" = "YHOO"),
               selected = "AAPL"),
+  dateRangeInput(
+    'date',
+    'Select a Date Range',
+    start = min(stocks$date),
+    end = max(stocks$date),
+    ),
   
   plotOutput("Stock_Graph")
 )
@@ -26,6 +32,8 @@ ui <- fluidPage(
 server <- function(input, output){
   output$Stock_Graph <- renderPlot({ selected_stocks %>%
       filter(symbol == input$select) %>%
+      filter(max(stocks$date) >= input$date[1])
+             (min(stocks$date) <= input$date[2]) %>%
       autoplot(open) +
       labs(title = "Info Tech Stocks", y = "Open", x = "Date")})
 }
