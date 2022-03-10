@@ -1,6 +1,6 @@
 server <- function(input, output){
   
-  output$Stock_Graph <- renderPlot({ 
+  output$Stock_Graph <- renderPlotly({ 
     p1 <- selected_stocks %>%
       filter(symbol == input$select) %>%
       ggplot(aes(x = date, y = open, color = factor(symbol))) +
@@ -14,7 +14,11 @@ server <- function(input, output){
     p1
   })
   
-  output$max_close <- renderPrint({
+  output$table_heading <- renderText({
+    "Max Closing Price (USD) and Date for Selected Stocks"
+  })
+  
+  output$max_close <- renderTable({
     max_price <- selected_stocks %>%
       filter(symbol == input$select) %>%
       group_by(symbol) %>%

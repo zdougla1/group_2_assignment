@@ -16,7 +16,9 @@ ui <- fluidPage(
                 label = "Would you like to add a linear trend line?",
                 value = TRUE),
   
-  plotOutput("Stock_Graph"),
+  verbatimTextOutput("table_heading"),
+  
+  plotlyOutput("Stock_Graph"),
   
   verbatimTextOutput("max_close")
 )

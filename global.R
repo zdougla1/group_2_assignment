@@ -1,6 +1,8 @@
 library(shiny)
 library(fpp3)
 library(readr)
+library(plotly)
+library(ggplot2)
 
 # Read zipped data
 stocks <- read_csv("nyse_stocks.csv.zip")
