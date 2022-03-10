@@ -1,0 +1,20 @@
+Information Technology Stock App
+
+
+This app is designed to show how opening price changes and the maximum closing price for selected stock(s) over a certain period of time. 
+
+
+Features:
+* Drop down to pick a stock 
+* Select a date range
+* Interactive graph output with option to add trend line
+* Max closing price 
+
+
+Instructions:
+1. Select which stock/stocks you would like to learn more about
+2. Input your desired date range
+3. Check or uncheck the box indicating if you would like to add a linear trend line
+4. View the graph and output for opening price  
+5. Hover mouse over graph to look at specific days or prices 
+6. View date and value of maximum closing price of the stock
